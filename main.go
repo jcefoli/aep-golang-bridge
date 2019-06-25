@@ -92,7 +92,7 @@ func main() {
     opts.SetPassword("trinity")
     opts.SetClientID("powerley-energybridge")
     opts.SetDefaultPublishHandler(f)
-    topic := "event/metering/instantaneous_demand"
+    topic := "remote/event/metering/instantaneous_demand"
 
     opts.OnConnect = func(c MQTT.Client) {
             if token := c.Subscribe(topic, 0, f); token.Wait() && token.Error() != nil {
